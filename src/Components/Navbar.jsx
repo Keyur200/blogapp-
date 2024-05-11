@@ -21,11 +21,13 @@ const Navbar = () => {
   function logout() {
 
     fetch('https://blogappapi.vercel.app/logout', {
-      credentials: 'include',
       method: 'POST',
-    });
-    Navigate("/");
-    setUserInfo(null);
+      credentials: 'include',
+    }).then(res => {
+      window.location.reload();
+      navigate("/");
+      setUserInfo(null);
+    })
   }
 
   const username = userInfo?.username;
