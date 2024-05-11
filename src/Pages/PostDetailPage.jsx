@@ -15,7 +15,7 @@ const PostDetailPage = () => {
 
     useEffect(() => {
         function getData() {
-            fetch(`https://blogapp-gdn9.vercel.app/post/${id}`)
+            fetch(`https://blogappapi.vercel.app/post/${id}`)
                 .then((response) => response.json()
                     .then(postinfo => {
                         setpostInfo(postinfo);
@@ -30,7 +30,7 @@ const PostDetailPage = () => {
 
 
     async function handleLikes(id) {
-        const response = await fetch('https://blogapp-gdn9.vercel.app/like', {
+        const response = await fetch('https://blogappapi.vercel.app/like', {
             method: 'PUT',
             credentials: 'include',
             headers: { "Content-Type": "application/json" },
@@ -46,7 +46,7 @@ const PostDetailPage = () => {
 
     }
     async function handleDislikes(id) {
-        await fetch('https://blogapp-gdn9.vercel.app/dislike', {
+        await fetch('https://blogappapi.vercel.app/dislike', {
             method: 'PUT',
             credentials: 'include',
             headers: { "Content-Type": "application/json" },
@@ -63,7 +63,7 @@ const PostDetailPage = () => {
 
 
     async function handleComment(text, postId) {
-        await fetch('https://blogapp-gdn9.vercel.app/comment', {
+        await fetch('https://blogappapi.vercel.app/comment', {
             method: 'PUT',
             credentials: 'include',
             headers: { "Content-Type": "application/json" },

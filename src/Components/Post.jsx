@@ -6,7 +6,7 @@ const Post = () => {
   const search = useSelector(state=>state.search.search)
   const [posts,setPosts] = useState([]);
   useEffect(()=>{
-    fetch('https://blogapp-gdn9.vercel.app/post').then((response)=>{
+    fetch('https://blogappapi.vercel.app/post').then((response)=>{
       response.json().then((posts)=>{
         setPosts(posts)
       })

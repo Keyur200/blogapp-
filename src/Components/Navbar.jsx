@@ -9,7 +9,7 @@ const Navbar = () => {
   const { setUserInfo, userInfo } = useContext(UserContext);
   const dispatch = useDispatch();
   useEffect(() => {
-    fetch('https://blogapp-gdn9.vercel.app/profile', {
+    fetch('https://blogappapi.vercel.app/profile', {
       credentials: 'include',
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -20,7 +20,7 @@ const Navbar = () => {
 
   function logout() {
 
-    fetch('https://blogapp-gdn9.vercel.app/logout', {
+    fetch('https://blogappapi.vercel.app/logout', {
       credentials: 'include',
       method: 'POST',
     });
