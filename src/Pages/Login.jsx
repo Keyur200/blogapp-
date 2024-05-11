@@ -11,7 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
    function login (e) {
     e.preventDefault();
-     fetch('http://localhost:4000/login', {
+     fetch('https://blogapp-gdn9.vercel.app/login', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },

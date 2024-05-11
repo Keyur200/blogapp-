@@ -30,7 +30,7 @@ const Create = () => {
         .catch(err=>console.log(err))
         console.log(link);
         link && (
-            fetch('http://localhost:4000/post', {
+            fetch('https://blogapp-gdn9.vercel.app/post', {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify({title,summary,content,pic:link}),
