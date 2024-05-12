@@ -24,9 +24,9 @@ const Create = () => {
             method: 'POST',
             body: Data,
         }).then(res => res.json())
-            .then(data => {
-                setUrl(data.url)
-                console.log(data.url)
+        .then(data => {
+            setUrl(data.url)
+            setLoading(true)
             })
             .catch(err => console.log(err))
         console.log(link);
@@ -41,7 +41,6 @@ const Create = () => {
                     if (data.error) {
                         toast.error(data.error)
                     } else {
-                        setLoading(true)
                         toast.success("Blog created successfully")
                         navigate('/')
                     }
