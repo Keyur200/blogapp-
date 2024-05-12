@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
+import {MdVerified} from 'react-icons/md'
 const Create = () => {
     const [title, setTitle] = useState();
     const [summary, setSummary] = useState();
@@ -12,7 +12,6 @@ const Create = () => {
     const [content, setContent] = useState();
     const [redirect, setRedirect] = useState(false);
     const [link, setUrl] = useState();
-    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     function createNewPost(e) {
         e.preventDefault();
@@ -26,8 +25,6 @@ const Create = () => {
         }).then(res => res.json())
         .then(data => {
             setUrl(data.url)
-            // setLoading(true)
-            // return ;
             })
             .catch(err => console.log(err))
         // console.log(link);
@@ -42,7 +39,6 @@ const Create = () => {
                     if (data.error) {
                         toast.error(data.error)
                     } else {
-                        // setLoading(false)
                         toast.success("Blog created successfully")
                         navigate('/')
                     }
@@ -72,7 +68,7 @@ const Create = () => {
                     
                     {
                         link && (
-                            <button className="w-[100%] bg-slate-600 text-xl font-semibold transition-all duration-300 text-white hover:bg-slate-700 p-2 rounded-md">Click one more time</button>
+                            <button className="w-[100%] bg-slate-600 text-xl font-semibold transition-all duration-300 text-white hover:bg-slate-700 p-2 rounded-md">Click one more time to upload a post <MdVerified className='fill-emerald-500' /></button>
                         )
                     }
                     
