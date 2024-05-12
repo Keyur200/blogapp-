@@ -68,7 +68,7 @@ const Create = () => {
                     
                     {
                         link && (
-                            <button className="w-[100%] bg-slate-600 text-xl font-semibold transition-all duration-300 text-white hover:bg-slate-700 p-2 rounded-md">Click one more time to upload a post <MdVerified className='fill-emerald-500' /></button>
+                            <button className="flex items-center gap-3 w-[100%] bg-slate-600 text-xl font-semibold transition-all duration-300 text-white hover:bg-slate-700 p-2 rounded-md">Click one more time to upload a post <MdVerified className='fill-emerald-500' /></button>
                         )
                     }
                     
