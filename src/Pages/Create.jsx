@@ -12,6 +12,7 @@ const Create = () => {
     const [content, setContent] = useState();
     const [redirect, setRedirect] = useState(false);
     const [link,setUrl] = useState();
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     function createNewPost(e){
         e.preventDefault();
@@ -40,6 +41,7 @@ const Create = () => {
                 if(data.error){
                     toast.error(data.error)
                 }else{
+                    setLoading(true)
                     toast.success("Blog created successfully")
                     navigate('/')
                 }
@@ -61,7 +63,10 @@ const Create = () => {
                 <input value={summary} onChange={(e)=>setSummary(e.target.value)} className="p-2 border-2 border-slate-300 rounded-sm outline-none"type="text" placeholder='Summary' />
                 <input onChange={(e)=>setFiles(e.target.files[0])} className="p-2 border-2 border-slate-300 rounded-sm outline-none" type="file"/>
                 <ReactQuill value={content} onChange={newVal => setContent(newVal)}  />
-                <button className="w-[100%] bg-slate-600 text-xl font-semibold transition-all duration-300 text-white hover:bg-slate-700 p-2 rounded-md">Create Post</button>
+                {loading ? 
+                    <button disabled className="w-[100%] bg-slate-600 text-xl font-semibold transition-all duration-300 text-white hover:bg-slate-500 p-2 rounded-md">Loading</button>
+                :    <button className="w-[100%] bg-slate-600 text-xl font-semibold transition-all duration-300 text-white hover:bg-slate-700 p-2 rounded-md">Create Post</button>
+                }
             </form>
         </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useContext } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { UserContext } from '../UserContext'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import {useDispatch} from 'react-redux'
@@ -8,6 +8,7 @@ import { setSearch } from '../Redux/SearchSlice'
 const Navbar = () => {
   const { setUserInfo, userInfo } = useContext(UserContext);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   useEffect(() => {
     fetch('https://blogappapi.vercel.app/profile', {
       credentials: 'include',
