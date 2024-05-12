@@ -41,6 +41,7 @@ const Create = () => {
                     if (data.error) {
                         toast.error(data.error)
                     } else {
+                        setLoading(false)
                         toast.success("Blog created successfully")
                         navigate('/')
                     }
