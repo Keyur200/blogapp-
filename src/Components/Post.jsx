@@ -32,7 +32,7 @@ const Post = () => {
             )
           })
         ) : (
-          <p className='w-full items-center justify-center'><iframe src="https://giphy.com/embed/uIJBFZoOaifHf52MER" width="480" height="439" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><Link to="https://giphy.com/gifs/UniversalMusicIndia-elvish-dg-immortals-bawli-uIJBFZoOaifHf52MER">via GIPHY</Link></p></p>
+          <p className='w-full items-center justify-center bg-black' ><img src="../images/200w.gif" alt="Loading..." /></p>
         )
       }
     </div>
