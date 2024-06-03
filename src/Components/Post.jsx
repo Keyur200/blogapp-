@@ -32,7 +32,7 @@ const Post = () => {
             )
           })
         ) : (
-          <p className='w-full items-center justify-center bg-black' ><img src="../images/200w.gif" alt="Loading..." /></p>
+          <p className='w-full items-center justify-center h-screen bg-black' ><img src="../images/200w.gif" className='flex items-center justify-center' alt="Loading..." /></p>
         )
       }
     </div>
