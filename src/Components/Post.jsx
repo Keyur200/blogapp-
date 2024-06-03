@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Blogs from './Blogs'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Post = () => {
   const search = useSelector(state=>state.search.search)
@@ -31,7 +32,7 @@ const Post = () => {
             )
           })
         ) : (
-          <p>Loading.....</p>
+          <p className='w-full items-center justify-center'><iframe src="https://giphy.com/embed/uIJBFZoOaifHf52MER" width="480" height="439" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><Link to="https://giphy.com/gifs/UniversalMusicIndia-elvish-dg-immortals-bawli-uIJBFZoOaifHf52MER">via GIPHY</Link></p></p>
         )
       }
     </div>
